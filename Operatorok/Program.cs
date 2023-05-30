@@ -10,7 +10,7 @@ namespace Operatorok
     internal class Program
     {
 
-        static List<string> kifejezesek;
+      
         static void Main(string[] args)
 
         { // Ellenőrzés:
@@ -30,9 +30,20 @@ namespace Operatorok
            
             Console.WriteLine($" 2.feladat: Kifejezések száma:{kifejezesek.Count()}");
 
-//----------------------------------------------------------------------------------------------------
+            //----------------------------------------------------------------------------------------------------
 
-            Console.WriteLine($"Kifejezéesek maradékos osztással: {}");
+
+
+            int mod = kifejezesek.Count(sor => sor.Contains("mod"));
+
+            
+            
+                Console.WriteLine($"Kifejezések maradékos osztással: {mod}");
+            
+
+           
+
+           
 
         }
     }
