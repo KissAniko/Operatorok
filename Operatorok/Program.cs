@@ -30,20 +30,35 @@ namespace Operatorok
            
             Console.WriteLine($" 2.feladat: Kifejezések száma:{kifejezesek.Count()}");
 
-            //----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------
 
 
+        int mod = kifejezesek.Count(sor => sor.Contains("mod"));
 
-            int mod = kifejezesek.Count(sor => sor.Contains("mod"));
+                       
+                Console.WriteLine($"3.feladat: Kifejezések maradékos osztással: {mod}");
 
-            
-            
-                Console.WriteLine($"Kifejezések maradékos osztással: {mod}");
-            
+//---------------------------------------------------------------------------------------------------
 
+            bool talalt = kifejezesek.Any(sor =>
+            {
+                string[] operandusok = sor.Split(' ');
+                if (operandusok.Length == 3)
+                {
+                    int bal, jobb;
+                    if (int.TryParse(operandusok[0], out bal) && int.TryParse(operandusok[2], out jobb))
+                    {
+                        return bal % 10 == 0 && jobb % 10 == 0;
+                    }
+                }
+                return false;
+            });
+            Console.WriteLine($"4.feladat:  {(talalt ? "Van iylen kifejezés" : "Nincs ilyen kifejezés")}");
            
 
-           
+
+
+
 
         }
     }
